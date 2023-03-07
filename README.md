@@ -15,7 +15,9 @@ No se logro utilizar hsqldb, en su lugar se utilizo PostgreSQL.
 # Modificar el archivo /src/main/resources/application.properties linea 5, 6 y 7 con sus credenciales
 
 spring.datasource.url=jdbc:postgresql://localhost:5432/clientes
+
 spring.datasource.username=SU_USUARIO
+
 spring.datasource.password=SU_CONTRASEÑA
 
 
