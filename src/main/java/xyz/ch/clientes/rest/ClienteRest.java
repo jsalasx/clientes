@@ -44,7 +44,15 @@ public class ClienteRest {
 	@PostMapping
 	private ResponseEntity<Respuesta> saveClientes(@RequestBody Cliente cliente) throws IOException, JAXBException {
 
+		if (cliente.getNombre() ==  null || cliente.getNombre().equals("")) {
+			Respuesta resp = new Respuesta("Digite el nombre del cliente", null);
+			return ResponseEntity.ok(resp);
+		}
 		
+		if (cliente.getEmail() ==  null || cliente.getEmail().equals("")) {
+			Respuesta resp = new Respuesta("Digite el email del cliente", null);
+			return ResponseEntity.ok(resp);
+		}
 		
 		if (cliente.getGrupo().equals("sk")) {
 			String json = obtenerDatosJson();
